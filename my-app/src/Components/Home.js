@@ -12,7 +12,7 @@ export default function Home() {
       })
       .catch(err => console.log(err));
   }, []);
-  console.log('users data on load', users);
+
   return (
     <section className='userist-container'>
       <h1>Home</h1>
@@ -24,6 +24,7 @@ export default function Home() {
               <section className='user' key={item.id}>
                 <h4>User: {item.name}</h4>
                 <p>Bio: {item.bio}</p>
+                <button className='delete'>Delete User</button>
               </section>
             );
           })
