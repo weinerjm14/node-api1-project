@@ -4,15 +4,18 @@ import Adduser from './AddUser';
 
 export default function Home() {
   const [users, setUsers] = useState();
-  const deleteUser = e => {
+  const deleteUser = (e, uid) => {
     e.preventDefault();
     const id = users.id;
     AxiosBaseConfig()
-      .delete(`/api/users/${id}`)
-      .then(res => console.log(res))
+      .delete(`/users/${uid}`)
+      .then(res => {
+        console.log(res);
+        getUsers();
+      })
       .catch(err => console.log(err));
   };
-  useEffect(() => {
+  const getUsers = () => {
     AxiosBaseConfig()
       .get('/users')
       .then(res => {
@@ -20,6 +23,9 @@ export default function Home() {
         setUsers(res.data);
       })
       .catch(err => console.log(err));
+  };
+  useEffect(() => {
+    getUsers();
   }, []);
 
   return (
@@ -34,7 +40,10 @@ export default function Home() {
               <section className='user' key={item.id}>
                 <h4>User: {item.name}</h4>
                 <p>Bio: {item.bio}</p>
-                <button className='delete' onClick={deleteUser}>
+                <button
+                  className='delete'
+                  onClick={e => deleteUser(e, item.id)}
+                >
                   Delete User
                 </button>
               </section>
