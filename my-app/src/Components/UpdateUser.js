@@ -46,24 +46,30 @@ export default function UpdateUser() {
           </section>
           <section className='update-info'>
             <form onSubmit={updatesUser}>
-              <lable>Name:</lable>
-              <input
-                type='text'
-                name='name'
-                value={userUdate.name}
-                onChange={handleChange}
-              />
-              <label>Bio:</label>
-              <input
-                type='text'
-                name='bio'
-                value={userUdate.bio}
-                onChange={handleChange}
-              />
+              <h4>New User Info</h4>
+              <section className='update-name'>
+                <label>Name: </label>
+                <input
+                  type='text'
+                  name='name'
+                  value={userUdate.name}
+                  onChange={handleChange}
+                />
+                <br />
+              </section>
+              <section className='update-bio'>
+                <label>Bio: </label>
+                <input
+                  type='text'
+                  name='bio'
+                  value={userUdate.bio}
+                  onChange={handleChange}
+                />
+                <br />
+              </section>
               <button>Update User Info</button>
             </form>
           </section>
-          >
         </section>
       ) : (
         <h2>Finding User</h2>

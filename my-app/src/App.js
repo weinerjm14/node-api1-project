@@ -7,12 +7,14 @@ import UpdateUser from './Components/UpdateUser';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path='/' component={Home} />
-        <Route path='/update-user' component={UpdateUser} />
-      </Switch>
-    </BrowserRouter>
+    <section className='full-container'>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route path='/update-user' component={UpdateUser} />
+        </Switch>
+      </BrowserRouter>
+    </section>
   );
 }
 

@@ -1,38 +1,34 @@
-.App {
+.full-container {
   text-align: center;
+  background-color: floralwhite;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.userslist {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  padding: 3%;
 }
-
-.App-link {
-  color: #61dafb;
+.user {
+  width: 22%;
+  padding: 1%;
+  border: 3px inset rebeccapurple;
+  margin: 2%;
+  background-color: lavenderblush;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h4,
+p {
+  color: rebeccapurple;
+}
+label {
+  font-weight: 600;
+}
+.adduser-form input {
+  margin: 1%;
+}
+.update-container .user {
+  margin: 0 auto;
+}
+.update-name,
+.update-bio {
+  margin-bottom: 1%;
 }
