@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import AxiosBaseConfig from '../utils/AxiosBaseConfig';
 
 export default function AddUser() {
@@ -24,7 +24,7 @@ export default function AddUser() {
   return (
     <section className='adduser-form'>
       <form onSubmit={addNewUser}>
-        <lable>Name:</lable>
+        <label>Name:</label>
         <input
           type='text'
           name='name'

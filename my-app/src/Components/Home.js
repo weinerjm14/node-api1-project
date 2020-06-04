@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import AxiosBaseConfig from '../utils/AxiosBaseConfig';
 import Adduser from './AddUser';
 
 export default function Home() {
   const [users, setUsers] = useState();
+  const history = useHistory();
   const deleteUser = (e, uid) => {
     e.preventDefault();
-    const id = users.id;
+
     AxiosBaseConfig()
       .delete(`/users/${uid}`)
       .then(res => {
@@ -46,11 +48,18 @@ export default function Home() {
                 >
                   Delete User
                 </button>
+                <button
+                  onClick={e => {
+                    history.push(`/update-user/?${item.id}`);
+                  }}
+                >
+                  Update User
+                </button>
               </section>
             );
           })
         ) : (
-          <h2>Finding Friends</h2>
+          <h2>Finding Users</h2>
         )}
       </section>
     </section>
