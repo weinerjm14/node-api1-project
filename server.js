@@ -1,9 +1,11 @@
 const express = require('express');
 const db = require('./database.js');
 const shortid = require('shortid');
+const cors = require('cors');
 
 const server = express();
 server.use(express.json());
+server.use(cors());
 
 server.get('/api/users', (req, res) => {
   const users = db.getUsers();
@@ -13,10 +15,14 @@ server.get('/api/users/:id', (req, res) => {
   const user = db.getUserById(req.params.id);
   if (user) {
     res.json(user);
-  } else {
+  } else if (!user) {
     res.status(404).json({
       message: 'The user with the specified ID does not exist.',
     });
+  } else {
+    res
+      .status(500)
+      .json({ errorMessage: 'The user information could not be retrieved.' });
   }
 });
 

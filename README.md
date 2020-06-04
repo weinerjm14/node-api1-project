@@ -21,7 +21,7 @@ Use Node.js and Express to build an API that performs CRUD operations on users.
 
 ### Write endpoints
 
-Add the code necessary to create a Web API and implement the following _endpoints_:
+[ X ] Add the code necessary to create a Web API and implement the following _endpoints_:
 
 | Method | URL            | Description                                                                                            |
 | ------ | -------------- | ------------------------------------------------------------------------------------------------------ |
@@ -45,7 +45,7 @@ Each User _resource_ should conform to the following structure (AKA schema):
 
 #### Endpoint Specifications
 
-When the client makes a `POST` request to `/api/users`:
+<!-- When the client makes a `POST` request to `/api/users`:
 
 - If the request body is missing the `name` or `bio` property:
 
@@ -56,7 +56,7 @@ When the client makes a `POST` request to `/api/users`:
 
   - save the new _user_ the the database.
   - respond with HTTP status code `201` (Created).
-  - return the newly created _user document_.
+  - return the newly created _user document_. -->
 
 - If there's an error while saving the _user_:
   - respond with HTTP status code `500` (Server Error).
