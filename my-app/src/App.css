@@ -1,0 +1,34 @@
+.full-container {
+  text-align: center;
+  background-color: floralwhite;
+}
+.userslist {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 3%;
+}
+.user {
+  width: 22%;
+  padding: 1%;
+  border: 3px inset rebeccapurple;
+  margin: 2%;
+  background-color: lavenderblush;
+}
+h4,
+p {
+  color: rebeccapurple;
+}
+label {
+  font-weight: 600;
+}
+.adduser-form input {
+  margin: 1%;
+}
+.update-container .user {
+  margin: 0 auto;
+}
+.update-name,
+.update-bio {
+  margin-bottom: 1%;
+}
